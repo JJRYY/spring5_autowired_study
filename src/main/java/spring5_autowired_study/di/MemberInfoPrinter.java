@@ -1,5 +1,7 @@
 package spring5_autowired_study.di;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class MemberInfoPrinter {
 	private MemberDao memDao;
 	private MemberPrinter printer;
@@ -14,10 +16,12 @@ public class MemberInfoPrinter {
 		System.out.println();
 	}
 
-	public void setMemDao(MemberDao memDao) {
+	@Autowired
+	public void setMemberDao(MemberDao memDao) {
 		this.memDao = memDao;
 	}
 
+	@Autowired
 	public void setPrinter(MemberPrinter printer) {
 		this.printer = printer;
 	}
